@@ -1,0 +1,121 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  position: relative;
+  background-color: #faf7f3;
+}
+
+#top-intro {
+  background-color: #afceed;
+  height: 100vh;
+}
+
+#top-intro h1 {
+  font-size: 78px;
+  color: #125395;
+  margin-top: 20vh;
+}
+
+#top-intro h1 small {
+  font-size: 36px;
+  color: #125395;
+}
+
+#links {
+  margin-top: 50px;
+}
+
+#btn {
+  background: #afceed;
+  font-size: 24px;
+  margin: 70px auto 70px auto;
+  width: 350px;
+  padding: 20px;
+  border: 3px solid #125395;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #337ab7;
+  opacity: 1;
+}
+
+#btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#btn a:hover {
+  text-decoration: none;
+}
+
+#argLink {
+  margin-top: 50px;
+}
+
+#argLink:hover {
+  text-decoration: none;
+  color: #125395;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #125395;
+}
+
+.navbar-default {
+  background: #afceed;
+  border-bottom: 1px solid #125395;
+  font-size: 16px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #125395;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #337ab7;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  color: #125395;
+  background-color: #afceed;
+}
+
+.navbar-nav .navbar-default .active a:hover {
+  color: #125395;
+  background-color: #afceed;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+#countdown {
+  font-family: 'Nixie One', cursive;
+  font-size: 64px;
+  color: #125395;
+}
+
+h1 {
+  font-size: 24px;
+  color: #6a6e6a;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 30px;
+}
+
+p {
+  color: #6a6e6a;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+svg {
+  fill: #125395;
+}
+
+svg:hover {
+  fill: #337ab7;
+}
+
+.topTitle {
+  padding-top: 60px;
+}
