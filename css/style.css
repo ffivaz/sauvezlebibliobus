@@ -7,6 +7,16 @@ body {
   background-color: #faf7f3;
 }
 
+a {
+  text-decoration: none;
+  color: #125395;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #afceed;
+}
+
 #top-intro {
   background-color: #afceed;
   height: 100vh;
@@ -48,6 +58,42 @@ body {
   text-decoration: none;
 }
 
+@media screen and (max-width: 640px) {
+  #top-intro {
+    background-color: #afceed;
+    height: 100vh;
+  }
+  #top-intro h1 {
+    font-size: 48px;
+    color: #125395;
+  }
+  #top-intro h1 small {
+    font-size: 24px;
+    color: #125395;
+  }
+  #links {
+    margin-top: 50px;
+  }
+  #btn {
+    background: #afceed;
+    font-size: 18px;
+    /*margin: 70px auto 70px auto;*/
+    width: 250px;
+    padding: 20px;
+    border: 3px solid #125395;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #337ab7;
+    opacity: 1;
+  }
+  #btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  #btn a:hover {
+    text-decoration: none;
+  }
+}
+
 #argLink {
   margin-top: 50px;
 }
@@ -66,11 +112,11 @@ body {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #125395;
+  color: #125395;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    color: #337ab7;
+  color: #337ab7;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
@@ -118,4 +164,10 @@ svg:hover {
 
 .topTitle {
   padding-top: 60px;
+}
+
+#footer {
+  height: 20vh;
+  background-color: #000;
+  margin-top: 5vh;
 }
