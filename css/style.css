@@ -92,6 +92,11 @@ a:hover {
   #btn a:hover {
     text-decoration: none;
   }
+  #countdown {
+  font-family: 'Nixie One', cursive;
+  font-size: 48px;
+  color: #125395;
+  }
 }
 
 #argLink {
