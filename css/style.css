@@ -17,6 +17,7 @@ a:hover {
   color: #afceed;
 }
 
+@media screen and (min-width: 640px) {
 #top-intro {
   background-color: #afceed;
   height: 100vh;
@@ -56,6 +57,13 @@ a:hover {
 
 #btn a:hover {
   text-decoration: none;
+}
+
+#countdown {
+  font-family: 'Nixie One', cursive;
+  font-size: 64px;
+  color: #125395;
+}
 }
 
 @media screen and (max-width: 640px) {
@@ -136,12 +144,6 @@ a:hover {
 
 .navbar {
   margin-bottom: 0;
-}
-
-#countdown {
-  font-family: 'Nixie One', cursive;
-  font-size: 64px;
-  color: #125395;
 }
 
 h1 {
