@@ -18,52 +18,45 @@ a:hover {
 }
 
 @media screen and (min-width: 640px) {
-#top-intro {
-  background-color: #afceed;
-  height: 100vh;
-}
-
-#top-intro h1 {
-  font-size: 78px;
-  color: #125395;
-  margin-top: 20vh;
-}
-
-#top-intro h1 small {
-  font-size: 36px;
-  color: #125395;
-}
-
-#links {
-  margin-top: 50px;
-}
-
-#btn {
-  background: #afceed;
-  font-size: 24px;
-  margin: 70px auto 70px auto;
-  width: 350px;
-  padding: 20px;
-  border: 3px solid #125395;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #337ab7;
-  opacity: 1;
-}
-
-#btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-#btn a:hover {
-  text-decoration: none;
-}
-
-#countdown {
-  font-family: 'Nixie One', cursive;
-  font-size: 64px;
-  color: #125395;
-}
+  #top-intro {
+    background-color: #afceed;
+    height: 100vh;
+  }
+  #top-intro h1 {
+    font-size: 78px;
+    color: #125395;
+    margin-top: 20vh;
+  }
+  #top-intro h1 small {
+    font-size: 36px;
+    color: #125395;
+  }
+  #links {
+    margin-top: 50px;
+  }
+  #btn {
+    background: #afceed;
+    font-size: 24px;
+    margin: 70px auto 70px auto;
+    width: 350px;
+    padding: 20px;
+    border: 3px solid #125395;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #337ab7;
+    opacity: 1;
+  }
+  #btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  #btn a:hover {
+    text-decoration: none;
+  }
+  #countdown {
+    font-family: 'Nixie One', cursive;
+    font-size: 64px;
+    color: #125395;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -101,9 +94,9 @@ a:hover {
     text-decoration: none;
   }
   #countdown {
-  font-family: 'Nixie One', cursive;
-  font-size: 48px;
-  color: #125395;
+    font-family: 'Nixie One', cursive;
+    font-size: 48px;
+    color: #125395;
   }
 }
 
