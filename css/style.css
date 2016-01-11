@@ -25,7 +25,7 @@ a:hover {
   #top-intro h1 {
     font-size: 78px;
     color: #125395;
-    margin-top: 20vh;
+    margin-top: 15vh;
   }
   #top-intro h1 small {
     font-size: 36px;
@@ -148,6 +148,10 @@ h1 {
   margin: 30px;
 }
 
+h2, h3, h4 {
+    color: #6a6e6a;
+}
+
 p {
   color: #6a6e6a;
   font-size: 18px;
@@ -170,4 +174,16 @@ svg:hover {
   height: 20vh;
   background-color: #000;
   margin-top: 5vh;
+}
+
+#adhesionComite {
+  height: 100vh;
+}
+
+.input-lg {
+  color: #6a6e6a;
+}
+
+.text-white {
+  color: lightgray;
 }
