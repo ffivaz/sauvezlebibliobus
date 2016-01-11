@@ -176,10 +176,6 @@ svg:hover {
   margin-top: 5vh;
 }
 
-#adhesionComite {
-  height: 100vh;
-}
-
 .input-lg {
   color: #6a6e6a;
 }
@@ -205,4 +201,8 @@ p, ul, li {
 
 address {
   margin-bottom: 0;
+}
+
+.well {
+  background-color: #fff;
 }
