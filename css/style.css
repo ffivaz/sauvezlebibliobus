@@ -202,3 +202,7 @@ p, ul, li {
   font-size: 18px;
   line-height: 1.5em;
 }
+
+address {
+  margin-bottom: 0;
+}
