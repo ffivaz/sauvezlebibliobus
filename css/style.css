@@ -100,11 +100,11 @@ a:hover {
   }
 }
 
-#argLink {
+.argLink {
   margin-top: 50px;
 }
 
-#argLink:hover {
+.argLink:hover {
   text-decoration: none;
   color: #125395;
   padding-bottom: 3px;
@@ -186,4 +186,19 @@ svg:hover {
 
 .text-white {
   color: lightgray;
+}
+
+h2 {
+  font-size: 18px;
+  color: #6a6e6a;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 30px;
+}
+
+p, ul, li {
+  color: #6a6e6a;
+  font-size: 18px;
+  line-height: 1.5em;
 }
