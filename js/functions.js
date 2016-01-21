@@ -35,10 +35,6 @@ $(function countdown() {
   timer = setInterval(showRemaining, 1000);
 
 });
-
-/**
- * Offset du scrollspy à cause de la barre de navigation fixe. Inspiration: http://denverdias.com/2014/11/19/bootstrap-scrollspy-tips/
- */
  
 /**
  * Smooth scrolling. Inspiration: http://stackoverflow.com/questions/7717527/jquery-smooth-scrolling-when-clicking-an-anchor-link
@@ -58,8 +54,4 @@ $(document).ready(function() {
     return false;
   });
 
-});
-
-$("signNow").click(function() {
-  window.location = $('#signer').attr('href');
 });
