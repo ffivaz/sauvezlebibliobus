@@ -17,7 +17,7 @@ $(function countdown() {
     if (distance < 0) {
 
       clearInterval(timer);
-      document.getElementById('countdown').innerHTML = 'TERMINE!';
+      document.getElementById('countdown').innerHTML = '7358 signatures récoltées<br>Merci à toutes et tous';
 
       return;
     }
