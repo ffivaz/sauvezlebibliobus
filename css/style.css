@@ -97,7 +97,7 @@ a:hover {
     font-size: 18px;
     color: #125395;
   }
-  #btn {
+  .btn {
     background: #afceed;
     font-size: 18px;
     width: 250px;
@@ -108,10 +108,10 @@ a:hover {
     color: #337ab7;
     opacity: 1;
   }
-  #btn:hover {
+  .btn:hover {
     background: rgba(255, 255, 255, 0.2);
   }
-  #btn a:hover {
+  .btn a:hover {
     text-decoration: none;
   }
   #countdown {
