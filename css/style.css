@@ -81,6 +81,7 @@ a:hover {
     font-family: 'Nixie One', cursive;
     font-size: 48px;
     color: #125395;
+    min-height: 100px;
   }
 }
 
@@ -118,6 +119,7 @@ a:hover {
     font-family: 'Nixie One', cursive;
     font-size: 36px;
     color: #125395;
+    min-height: 100px;
   }
 }
 
