@@ -59,7 +59,7 @@ a:hover {
     font-size: 36px;
     color: #125395;
   }
-  .btn {
+  .butn {
     background: #afceed;
     font-size: 24px;
     margin: 70px auto 70px auto;
@@ -71,10 +71,10 @@ a:hover {
     color: #337ab7;
     opacity: 1;
   }
-  .btn:hover {
+  .butn:hover {
     background: rgba(255, 255, 255, 0.2);
   }
-  .btn a:hover {
+  .butn a:hover {
     text-decoration: none;
   }
   #countdown {
@@ -97,7 +97,7 @@ a:hover {
     font-size: 18px;
     color: #125395;
   }
-  .btn {
+  .butn {
     background: #afceed;
     font-size: 18px;
     width: 250px;
@@ -108,10 +108,10 @@ a:hover {
     color: #337ab7;
     opacity: 1;
   }
-  .btn:hover {
+  .butn:hover {
     background: rgba(255, 255, 255, 0.2);
   }
-  .btn a:hover {
+  .butn a:hover {
     text-decoration: none;
   }
   #countdown {
