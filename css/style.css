@@ -59,7 +59,7 @@ a:hover {
     font-size: 36px;
     color: #125395;
   }
-  #btn {
+  .btn {
     background: #afceed;
     font-size: 24px;
     margin: 70px auto 70px auto;
@@ -71,10 +71,10 @@ a:hover {
     color: #337ab7;
     opacity: 1;
   }
-  #btn:hover {
+  .btn:hover {
     background: rgba(255, 255, 255, 0.2);
   }
-  #btn a:hover {
+  .btn a:hover {
     text-decoration: none;
   }
   #countdown {
