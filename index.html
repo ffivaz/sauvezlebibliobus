@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description"
           content="Bibliobus et lecture publique neuchâtelois - NON au désengagement de l'Etat.">
-    <title>Bibliobus et lecture publique - NON au désengagement de l'Etat</title>
+    <title>Bibliobus et lecture publique neuchâtelois - NON au désengagement de l'Etat</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
@@ -30,41 +30,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" async></script>
     <script>
-        $(function countdown() {
-
-            var end = new Date('03/17/2016 12:00 PM');
-
-            var _second = 1000;
-            var _minute = _second * 60;
-            var _hour = _minute * 60;
-            var _day = _hour * 24;
-            var timer;
-
-            function showRemaining() {
-                var now = new Date();
-                var distance = end - now;
-                if (distance < 0) {
-
-                    clearInterval(timer);
-                    document.getElementById('countdown').innerHTML = '7358 signatures récoltées<br>Merci à toutes et tous';
-
-                    return;
-                }
-                var days = Math.floor(distance / _day);
-                var hours = ('0' + Math.floor((distance % _day) / _hour)).slice(-2);
-                var minutes = ('0' + Math.floor((distance % _hour) / _minute)).slice(-2);
-                var seconds = ('0' + Math.floor((distance % _minute) / _second)).slice(-2);
-
-                document.getElementById('countdown').innerHTML = days + ' jours ';
-                document.getElementById('countdown').innerHTML += hours + ':';
-                document.getElementById('countdown').innerHTML += minutes + ':';
-                document.getElementById('countdown').innerHTML += seconds + '';
-            }
-
-            timer = setInterval(showRemaining, 1000);
-
-        });
-
         $(document).ready(function() {
             $('a').click(function() {
                 $('html, body').animate({
@@ -107,7 +72,7 @@
                 <br>
                 <small>NON au désengagement de l'Etat</small>
             </h1>
-            <div id="countdown"></div>
+            <div id="countdown">7358 signatures récoltées<br>Merci à toutes et tous</div>
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
             <p><a href="#arguments" class="argLink">Argumentaire</a></p>
@@ -120,10 +85,12 @@
     <div class="row" id="arguments">
         <div class="col-md-12">
             <h1>Argumentaire</h1>
-            <p class="text-center">
-                <strong>Vous avez signé la pétition ? Signez le référendum ! Le Grand Conseil n'a pas pris en compte
-                    les 20'000 signatures récoltées en 2015.</strong>
+            <p>
+                <strong>Le 16 mars 2016, le référendum muni de 7358 signatures validées a été déposé à la chancellerie.
+                   Le Conseil d'Etat neuchâtelois a six mois pour soumettre l'objet au peuple. La votation aura donc lieu en
+                juin ou en septembre.</strong>
             </p>
+          <p><strong>Lors de la votation, il faudra dire NON désengagement de l'Etat du subventionnement du Bibliobus.</strong></p>
             <h2>Quelques chiffres</h2>
             <p>
                 Le Bibliobus, c’est :</p>
@@ -134,7 +101,7 @@
                 <li>18'679 réservations satisfaites</li>
                 <li>12’201 lecteurs, plus de 150 classes</li>
             </ul>
-            <h2>Une pétition sans suite</h2>
+            <h2>20'000 signatures non considérées</h2>
             <p>
                 Le Bibliobus a déposé fin octobre une pétition munie de plus de 20'000 signatures. Malgré cela, le 3
                 décembre 2015 le Grand Conseil a décidé de modifier la Loi sur l'aide à la lecture publique
@@ -142,13 +109,15 @@
                 lecture publique du Canton. Texte de loi supprimé : «
                 <em>L’État participe aux frais d’équipement et de fonctionnement du service ambulant, dont la gestion
                     est assumée par l’association neuchâteloise pour le développement de la lecture par bibliobus.</em>»
+              Suite à cette décision, le référendum a été lancé. Il a aboutit en mars 2016. Le peuple aura donc le dernier mot.
             </p>
-            <h2>Un plan de secours sans suite</h2>
+            <h2>Un plan de secours bâclé</h2>
             <p>
-                Le «plan de secours» de l’Etat propose 320'000 francs pour cette année, ce qui permet au bibliobus et
+                Le «plan de secours» de l’Etat propose 320'000 francs cette année, ce qui permet au bibliobus et
                 à ses 7 succursales de survivre en 2016. Et après ??? Sans la participation financière de l’Etat,
-                les communes ne pourront pas assumer seules ce report de charges. Cela entrainera la suppression
-                du Bibliobus, et de ses 7 succursales.
+                les communes ne pourront pas assumer seules ce report de charges. Cela pourrait entraîner la suppression
+                du Bibliobus et de ses 7 succursales, ou réduire drastiquement l'offre actuelle, en particulier
+                la couverture du territoire.
             </p>
             <h2>Lutter contre l'illetrisme</h2>
             <p>
