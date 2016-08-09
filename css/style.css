@@ -59,6 +59,7 @@ a:hover {
     color: white;
     top: 10vh;
     font-size: 10px;
+    opacity: 0.5;
 }
 
 @media screen and (min-width: 640px) {
