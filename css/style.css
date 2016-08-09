@@ -22,7 +22,9 @@ h2 {
     text-align: center;
     letter-spacing: 3px;
     margin: 30px;
-    hyphens: auto;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
 }
 
 h3, h4 {
