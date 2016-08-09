@@ -127,12 +127,12 @@ a:hover {
         position: relative;
         background-image: url(../images/fond_livres.jpg);
         background-repeat: no-repeat;
-        background-position: right top;
+        background-position: left top;
         background-attachment: fixed;
+        background-size: cover;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-        background-size: cover;
         height: 100vh;
         padding-top: 20vh;
     }
