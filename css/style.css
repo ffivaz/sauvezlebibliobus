@@ -52,6 +52,8 @@ a:hover {
         background-repeat: no-repeat;
         background-position: right top;
         background-attachment: fixed;
+        background-position-x: 100%;
+        background-position-y: 0%;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
