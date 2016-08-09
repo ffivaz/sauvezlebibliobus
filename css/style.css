@@ -4,12 +4,11 @@
 
 body {
     position: relative;
-    background-color: #faf7f3;
 }
 
 h1 {
     font-size: 24px;
-    color: #6a6e6a;
+    color: black;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 3px;
@@ -18,7 +17,7 @@ h1 {
 
 h2 {
     font-size: 18px;
-    color: #6a6e6a;
+    color: black;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 3px;
@@ -26,11 +25,11 @@ h2 {
 }
 
 h3, h4 {
-    color: #6a6e6a;
+    color: black;
 }
 
 p, ul, li {
-    color: #6a6e6a;
+    color: black;
     font-size: 18px;
     line-height: 1.5em;
 }
