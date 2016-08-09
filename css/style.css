@@ -78,8 +78,8 @@ a:hover {
     .bottom-chevron {
         position: absolute;
         bottom: 0;
-        margin-left: calc(50vw - 20px);
-        font-size: 60px;
+        margin-left: calc(50vw - 30px);
+        font-size: 45px;
         color: white;
     }
 
@@ -153,8 +153,8 @@ a:hover {
     .bottom-chevron {
         position: absolute;
         bottom: 0;
-        margin-left: calc(50vw - 20px);
-        font-size: 60px;
+        margin-left: calc(50vw - 10px);
+        font-size: 25px;
         color: white;
     }
 
