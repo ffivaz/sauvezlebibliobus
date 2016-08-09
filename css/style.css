@@ -49,7 +49,7 @@ a:hover {
     #top-intro {
         position: relative;
         height: 100vh;
-        background: url(../images/fond_livres.jpg) no-repeat center center fixed;
+        background: url(../images/fond_livres.jpg) no-repeat right top fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
