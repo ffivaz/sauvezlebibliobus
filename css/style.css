@@ -51,13 +51,14 @@ a:hover {
         background-image: url(../images/fond_livres.jpg);
         background-repeat: no-repeat;
         background-position: right top;
-        background-attachment: fixed;
+        /*background-attachment: fixed;*/
         background-position-x: 100%;
         background-position-y: 0%;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+        background-attachment: scroll;
     }
 
     #top-intro h1 {
@@ -70,7 +71,7 @@ a:hover {
         font-size: 36px;
         color: white;
     }
-    
+
     #top-intro a:hover {
         color: white;
     }
