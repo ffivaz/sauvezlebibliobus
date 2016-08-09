@@ -30,15 +30,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" async></script>
     <script>
-        $(document).ready(function() {
-            $('a').click(function() {
+        $(document).ready(function () {
+            $('a').click(function () {
                 $('html, body').animate({
                     scrollTop: $($(this).attr('href')).offset().top
                 }, 500);
                 return false;
             });
 
-            $('#toTop').click(function() {
+            $('#toTop').click(function () {
                 $("html, body").animate({
                     scrollTop: 0
                 }, 600);
@@ -65,29 +65,51 @@
 </head>
 
 <body data-spy="scroll" data-target="#navbar">
-<div class="container-fluid">
-    <div class="row" id="top-intro">
-        <h1 class="col-md-12 col-sm-12 col-xs-12 text-center">
-            <h1><small>NON au désengagement de l'Etat</small><br>Bibliobus et lecture publique
-                <br><small>Aidez-nous à financer la campagne:</small><br>
-                <a href="https://wemakeit.com/projects/sauvez-le-bibliobus" class="argLink underline">WeMakeIt!</a></p></h1>
-        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-            <p><a href="#arguments" class="argLink">Argumentaire</a></p>
-            <p><a href="#adhesionComite" class="argLink">Adhérer au comité</a></p>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand" href="index.html">NON au démantèlement du Bibliobus</a>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#arguments">Arguments</a></li>
+                <li><a href="#adhesionComite">Comité</a></li>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
+<div class="container-fluid">
+    <div class="row" id="top-intro">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <h1>
+                <small>Bibliobus et lecture publique</small>
+                <br><span class="big-text">NON</span><br> au désengagement de l'Etat
+            </h1>
+        </div>
+        <div class="bottom-chevron">
+            <a href="#arguments" class="link-no-change"><span class="glyphicon glyphicon-arrow-down"></span></a>
+        </div>
+    </div>
 </div>
 <div class="container">
     <div class="row" id="arguments">
         <div class="col-md-12">
-            <h1>Argumentaire</h1>
+            <h1><br><br>ARGUMENTAIRE</h1>
             <p>
                 <strong>Le 16 mars 2016, le référendum muni de 7358 signatures validées a été déposé à la chancellerie.
-                   Le Conseil d'Etat neuchâtelois a six mois pour soumettre l'objet au peuple. La votation aura donc lieu en
-                juin ou en septembre.</strong>
+                    Le Conseil d'Etat neuchâtelois a fixé la date de la votation le 25 septembre 2016.</strong>
             </p>
-          <p><strong>Lors de la votation, il faudra dire NON désengagement de l'Etat du subventionnement du Bibliobus.</strong></p>
+            <p><strong>Lors de la votation, il faudra dire NON désengagement de l'Etat du subventionnement du
+                Bibliobus.</strong></p>
             <h2>Quelques chiffres</h2>
             <p>
                 Le Bibliobus, c’est :</p>
@@ -106,7 +128,8 @@
                 lecture publique du Canton. Texte de loi supprimé : «
                 <em>L’État participe aux frais d’équipement et de fonctionnement du service ambulant, dont la gestion
                     est assumée par l’association neuchâteloise pour le développement de la lecture par bibliobus.</em>»
-              Suite à cette décision, le référendum a été lancé. Il a aboutit en mars 2016. Le peuple aura donc le dernier mot.
+                Suite à cette décision, le référendum a été lancé. Il a aboutit en mars 2016. Le peuple aura donc le
+                dernier mot.
             </p>
             <h2>Un plan de secours bâclé</h2>
             <p>
@@ -149,7 +172,7 @@
     </div>
     <div class="row well" id="adhesionComite">
         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-            <h1>ADHESION AU COMITE</h1>
+            <h1><br><br>ADHESION AU COMITE</h1>
         </div>
         <div class="col-md-8 col-sm-8 col-xs-12">
             <form action="https://getsimpleform.com/messages?form_api_token=ff1396a9ba7c044c184d092a0ba95dc1"

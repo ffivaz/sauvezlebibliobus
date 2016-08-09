@@ -1,148 +1,219 @@
 * {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-  position: relative;
-  background-color: #faf7f3;
+    position: relative;
+    background-color: #faf7f3;
 }
 
 h1 {
-  font-size: 24px;
-  color: #6a6e6a;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 3px;
-  margin: 30px;
+    font-size: 24px;
+    color: #6a6e6a;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 30px;
 }
 
 h2 {
-  font-size: 18px;
-  color: #6a6e6a;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 3px;
-  margin: 30px;
+    font-size: 18px;
+    color: #6a6e6a;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 30px;
 }
 
 h3, h4 {
-  color: #6a6e6a;
+    color: #6a6e6a;
 }
 
 p, ul, li {
-  color: #6a6e6a;
-  font-size: 18px;
-  line-height: 1.5em;
+    color: #6a6e6a;
+    font-size: 18px;
+    line-height: 1.5em;
 }
 
 a {
-  text-decoration: none;
-  color: #125395;
+    text-decoration: none;
+    color: #125395;
 }
 
 a:hover {
-  text-decoration: none;
-  color: #afceed;
+    text-decoration: none;
+    color: #afceed;
 }
 
 @media screen and (min-width: 640px) {
-  #top-intro {
-    background-color: #afceed;
-    height: 100vh;
-  }
-  #top-intro h1 {
-    font-size: 78px;
-    color: #125395;
-    margin-top: 15vh;
-  }
-  #top-intro h1 small {
-    font-size: 36px;
-    color: #125395;
-  }
-  .butn {
-    background: #afceed;
-    font-size: 24px;
-    margin: 70px auto 70px auto;
-    width: 350px;
-    padding: 20px;
-    border: 3px solid #125395;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #337ab7;
-    opacity: 1;
-  }
-  .butn:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  .butn a:hover {
-    text-decoration: none;
-  }
-  #countdown {
-    font-family: 'Nixie One', cursive;
-    font-size: 48px;
-    color: #125395;
-    min-height: 200px;
-  }
+    #top-intro {
+        position: relative;
+        height: 100vh;
+        background: url(../images/fond_livres.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #top-intro h1 {
+        font-size: 78px;
+        color: white;
+        margin-top: 15vh;
+    }
+
+    #top-intro h1 small {
+        font-size: 36px;
+        color: white;
+    }
+    
+    #top-intro a:hover {
+        color: white;
+    }
+
+    .big-text {
+        font-size: 240px;
+    }
+
+    .bottom-chevron {
+        position: absolute;
+        bottom: 0;
+        margin-left: calc(50vw - 20px);
+        font-size: 60px;
+        color: white;
+    }
+
+    .link-no-change {
+        color: white;
+    }
+
+    .link-no-change {
+        opacity: 90;
+    }
+
+    .butn {
+        background: #afceed;
+        font-size: 24px;
+        margin: 70px auto 70px auto;
+        width: 350px;
+        padding: 20px;
+        border: 3px solid #125395;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #337ab7;
+        opacity: 1;
+    }
+
+    .butn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .butn a:hover {
+        text-decoration: none;
+    }
+
+    #countdown {
+        font-family: 'Nixie One', cursive;
+        font-size: 48px;
+        color: #125395;
+        min-height: 200px;
+    }
 }
 
 @media screen and (max-width: 640px) {
-  #top-intro {
-    background-color: #afceed;
-    height: 100vh;
-  }
-  #top-intro h1 {
-    font-size: 42px;
-    color: #125395;
-  }
-  #top-intro h1 small {
-    font-size: 24px;
-    color: #125395;
-  }
-  .butn {
-    background: #afceed;
-    font-size: 18px;
-    width: 250px;
-    padding: 20px;
-    border: 3px solid #125395;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #337ab7;
-    opacity: 1;
-    min-height: 50px;
-  }
-  .butn:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  .butn a:hover {
-    text-decoration: none;
-  }
-  #countdown {
-    font-family: 'Nixie One', cursive;
-    font-size: 24px;
-    color: #125395;
-    min-height: 100px;
-  }
+    #top-intro {
+        position: relative;
+        background: url(../images/fond_livres.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 100vh;
+        padding-top: 20vh;
+    }
+
+    #top-intro h1 {
+        font-size: 32px;
+        color: white;
+    }
+
+    #top-intro h1 small {
+        font-size: 24px;
+        color: white;
+    }
+
+    #top-intro a:hover {
+        color: white;
+    }
+
+    .big-text {
+        font-size: 120px;
+    }
+
+    .bottom-chevron {
+        position: absolute;
+        bottom: 0;
+        margin-left: calc(50vw - 20px);
+        font-size: 60px;
+        color: white;
+    }
+
+    .link-no-change {
+        color: white;
+    }
+
+    .link-no-change {
+        opacity: 90;
+    }
+
+    .butn {
+        background: #afceed;
+        font-size: 18px;
+        width: 250px;
+        padding: 20px;
+        border: 3px solid #125395;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #337ab7;
+        opacity: 1;
+        min-height: 50px;
+    }
+
+    .butn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .butn a:hover {
+        text-decoration: none;
+    }
+
+    #countdown {
+        font-family: 'Nixie One', cursive;
+        font-size: 24px;
+        color: #125395;
+        min-height: 100px;
+    }
 }
 
 .argLink {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .argLink:hover {
-  text-decoration: none;
-  color: #125395;
-  padding-bottom: 3px;
-  border-bottom: 2px solid #125395;
+    text-decoration: none;
+    color: #125395;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #125395;
 }
 
 .input-lg {
-  color: #6a6e6a;
+    color: #6a6e6a;
 }
 
 .well {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .underline {
-  text-decoration: underline;
+    text-decoration: underline;
 }
