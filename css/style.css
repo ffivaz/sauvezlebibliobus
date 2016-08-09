@@ -53,13 +53,11 @@ a:hover {
 }
 
 .vertical-text {
-    position: absolute;
+    float: left;
     transform: rotate(90deg);
     transform-origin: left top 0;
     color: white;
-    top: 0;
-    margin-top: 35vh;
-    left: 2vh;
+    margin-top: 60px;
     font-size: 10px;
 }
 
