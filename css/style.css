@@ -117,34 +117,6 @@ a:hover {
     .link-no-change {
         opacity: 90;
     }
-
-    .butn {
-        background: #afceed;
-        font-size: 24px;
-        margin: 70px auto 70px auto;
-        width: 350px;
-        padding: 20px;
-        border: 3px solid #125395;
-        border-radius: 10px;
-        text-decoration: none;
-        color: #337ab7;
-        opacity: 1;
-    }
-
-    .butn:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    .butn a:hover {
-        text-decoration: none;
-    }
-
-    #countdown {
-        font-family: 'Nixie One', cursive;
-        font-size: 48px;
-        color: #125395;
-        min-height: 200px;
-    }
 }
 
 @media screen and (max-width: 640px) {
@@ -195,45 +167,6 @@ a:hover {
     .link-no-change {
         opacity: 90;
     }
-
-    .butn {
-        background: #afceed;
-        font-size: 18px;
-        width: 250px;
-        padding: 20px;
-        border: 3px solid #125395;
-        border-radius: 10px;
-        text-decoration: none;
-        color: #337ab7;
-        opacity: 1;
-        min-height: 50px;
-    }
-
-    .butn:hover {
-        background: rgba(255, 255, 255, 0.2);
-    }
-
-    .butn a:hover {
-        text-decoration: none;
-    }
-
-    #countdown {
-        font-family: 'Nixie One', cursive;
-        font-size: 24px;
-        color: #125395;
-        min-height: 100px;
-    }
-}
-
-.argLink {
-    margin-top: 50px;
-}
-
-.argLink:hover {
-    text-decoration: none;
-    color: #125395;
-    padding-bottom: 3px;
-    border-bottom: 2px solid #125395;
 }
 
 .input-lg {
@@ -242,8 +175,4 @@ a:hover {
 
 .well {
     background-color: #fff;
-}
-
-.underline {
-    text-decoration: underline;
 }
