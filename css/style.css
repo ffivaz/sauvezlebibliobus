@@ -51,6 +51,10 @@ a:hover {
     color: white;
 }
 
+.navbar-inverse .navbar-nav>li>a:hover {
+    opacity: 0.5;
+}
+
 .navbar-inverse .navbar-brand {
     color: white;
 }
