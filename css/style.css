@@ -47,11 +47,11 @@ a:hover {
     color: #afceed;
 }
 
-.navbar-inverse .navbar-nav>li>a {
+.navbar-inverse .navbar-nav > li > a {
     color: white;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover {
+.navbar-inverse .navbar-nav > li > a:hover {
     opacity: 0.5;
 }
 
@@ -177,19 +177,39 @@ a:hover {
     background-color: #fff;
 }
 
-.testimonial-box {
-    border: 1px solid black;
-    padding: 20px;
-    background-color: lightgray;
-    border-radius: 25px;
+.example-twitter {
+    position: relative;
+    padding: 15px;
+    margin: 100px 0 0.5em;
+    color: #333;
+    background: #eee;
+    /* css3 */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
-.testimonial-text {
-    font-size: 24px;
+.example-twitter p {
+    font-size: 28px;
+    line-height: 1.25em;
 }
 
-.testimonial-signature {
-    font-size: 18px;
-    font-weight: 700;
+/* creates the triangle */
+.example-twitter:after {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50px;
+    border: 15px solid transparent;
+    border-bottom-color: #eee;
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 0;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-twitter + p {
+    padding-left: 15px;
+    font: 14px Arial, sans-serif;
     text-align: right;
 }

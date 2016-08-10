@@ -29,13 +29,16 @@
 <div class="container">
     <div class="row">
         <h1>Parlez-nous de votre Bibliobus</h1>
-        <div class="testimonial-box">
-            <p data-bind="text: testimonialText" class="testimonial-text"></p>
-            <p data-bind="text: testimonialSignature" class="testimonial-signature"></p>
-        </div>
+        <blockquote class="example-twitter">
+            <p data-bind="text: testimonialText"></p>
+        </blockquote>
+        <p data-bind="text: testimonialSignature"></p>
+
         <div class="testimonial-commands">
             <button data-bind="click: previousTestimonial"><</button>&nbsp;<button data-bind="click: nextTestimonial">></button>
+            <a href="give-testimonials.html">Ajouter votre propre message</a>
         </div>
+
     </div>
 </div>
 <script>
@@ -100,7 +103,7 @@
 
         setInterval(function () {
             that.nextTestimonial();
-        }, 2000)
+        }, 10000)
 
     };
 
