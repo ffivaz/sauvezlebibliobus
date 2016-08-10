@@ -20,7 +20,7 @@
             apiKey: "AIzaSyBpqiMmWV3KB0WB09cSC0108ULE8E_7DJ8",
             authDomain: "bibliobus-testimonials.firebaseapp.com",
             databaseURL: "https://bibliobus-testimonials.firebaseio.com",
-            storageBucket: "",
+            storageBucket: ""
         };
         firebase.initializeApp(config);
     </script>
@@ -34,7 +34,7 @@
             <p data-bind="text: testimonialSignature" class="testimonial-signature"></p>
         </div>
         <div class="testimonial-commands">
-            <button data-bind="click: previousTestimonial"><</button>&nbsp;<button data-bind="nextTestimonial">></button>
+            <button data-bind="click: previousTestimonial"><</button>&nbsp;<button data-bind="click: nextTestimonial">></button>
         </div>
     </div>
 </div>
@@ -43,24 +43,20 @@
     var viewModel = function () {
 
         var that = this;
+        var testimonials = ko.observableArray([]);
+        testimonials.push(
+                {
+                    name: "Fivaz",
+                    surname: "Fabien",
+                    locality: "La Chaux-de-Fonds",
+                    testimonial: "Le Bibliobus est une institution neuchâteloise. Fondé en 1974, par décret du Grand Conseil, faisant suite à une proposition de députés, il sillonne le canton pour permettre à une majorité de neuchâteloise et neuchâtelois d'avoir une bibliothèque dans leur village."
+                }
+        );
 
-        //var recentTestimonials = firebase.database().ref('testimonials').limitToLast(10);
-        //console.log(recentTestimonials);
-
-        var testimonials = [
-            {
-                name: "Fivaz",
-                surname: "Fabien",
-                locality: "La Chaux-de-Fonds",
-                text: "Ceci est un test"
-            },
-            {
-                name: "Gabathuler",
-                surname: "Zoé",
-                locality: "La Chaux-de-Fonds",
-                text: "Ceci est un deuxième test"
-            }
-        ];
+        var recentTestimonials = firebase.database().ref('testimonials/');
+        recentTestimonials.on('child_added', function (data) {
+            testimonials.push(data.val());
+        });
 
         this.testimonialText = ko.observable("");
         this.testimonialName = ko.observable("");
@@ -75,30 +71,40 @@
             that.testimonialName(data.name);
             that.testimonialSurname(data.surname);
             that.testimonialLocality(data.locality);
-            that.testimonialText(data.text);
+            that.testimonialText(data.testimonial);
         };
 
-        currentTestimonial = 0;
+        this.currentTestimonial = ko.observable();
 
-        setTestimonial(testimonials[currentTestimonial]);
+        this.currentTestimonial.subscribe(function (newValue) {
+            setTestimonial(testimonials()[newValue]);
+        });
+
+        this.currentTestimonial(0);
 
         this.previousTestimonial = function () {
-            if (testimonials.length > 1 && currentTestimonial > 0) {
-                setTestimonial(testimonials[currentTestimonial - 1]);
+            if (that.currentTestimonial() > 0) {
+                that.currentTestimonial(that.currentTestimonial() - 1);
+            } else {
+                that.currentTestimonial(testimonials().length - 1);
             }
         };
 
         this.nextTestimonial = function () {
-            /*if (testimonials.length > 1 && currentTestimonial < testimonials.length) {
-                setTestimonial(testimonials[currentTestimonial + 1]);
+            if (that.currentTestimonial() < testimonials().length - 1) {
+                that.currentTestimonial(that.currentTestimonial() + 1);
+            } else {
+                that.currentTestimonial(0);
             }
-            setTestimonial(testimonials[currentTestimonial + 1]);*/
-            setTestimonial(testimonials[1]);
-            console.log('click');
         };
+
+        setInterval(function () {
+            that.nextTestimonial();
+        }, 2000)
 
     };
 
+    var i = true;
     ko.applyBindings(viewModel);
 </script>
 </body>
