@@ -180,7 +180,7 @@ a:hover {
 .example-twitter {
     position: relative;
     padding: 15px;
-    margin: 100px 0 0.5em;
+    margin: 50px 0 0.5em;
     color: #333;
     background: #eee;
     /* css3 */
@@ -212,4 +212,12 @@ a:hover {
     padding-left: 15px;
     font: 14px Arial, sans-serif;
     text-align: right;
+}
+
+.testimonial-commands {
+    float: left;
+}
+
+.error-message {
+    color: red;
 }

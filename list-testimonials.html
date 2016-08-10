@@ -35,8 +35,8 @@
         <p data-bind="text: testimonialSignature"></p>
 
         <div class="testimonial-commands">
-            <button data-bind="click: previousTestimonial"><</button>&nbsp;<button data-bind="click: nextTestimonial">></button>
-            <a href="give-testimonials.html">Ajouter votre propre message</a>
+            <button title="précédent" class="btn btn-default" data-bind="click: previousTestimonial"><span class="glyphicon glyphicon-step-backward"></span></button>&nbsp;<button title="suivant" class="btn btn-default" data-bind="click: nextTestimonial"><span class="glyphicon glyphicon-step-forward"></span></button>
+            <a href="give-testimonials.html" class="btn btn-default">Ajouter votre propre témoignage</a>
         </div>
 
     </div>
@@ -49,14 +49,14 @@
         var testimonials = ko.observableArray([]);
         testimonials.push(
                 {
-                    name: "Fivaz",
-                    surname: "Fabien",
-                    locality: "La Chaux-de-Fonds",
-                    testimonial: "Le Bibliobus est une institution neuchâteloise. Fondé en 1974, par décret du Grand Conseil, faisant suite à une proposition de députés, il sillonne le canton pour permettre à une majorité de neuchâteloise et neuchâtelois d'avoir une bibliothèque dans leur village."
+                    name: "",
+                    surname: "",
+                    locality: "",
+                    testimonial: "Chargement des données..."
                 }
         );
 
-        var recentTestimonials = firebase.database().ref('testimonials/');
+        var recentTestimonials = firebase.database().ref('testimonials/').orderByChild("order");
         recentTestimonials.on('child_added', function (data) {
             testimonials.push(data.val());
         });
@@ -99,11 +99,15 @@
             } else {
                 that.currentTestimonial(0);
             }
+            if (i) {
+                testimonials.shift();
+                i = false;
+            }
         };
 
         setInterval(function () {
             that.nextTestimonial();
-        }, 10000)
+        }, 5000)
 
     };
 
