@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Parlez-nous de votre Bibliobus</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" async></script>
+    <script src="js/knockout-3.4.0.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBpqiMmWV3KB0WB09cSC0108ULE8E_7DJ8",
+            authDomain: "bibliobus-testimonials.firebaseapp.com",
+            databaseURL: "https://bibliobus-testimonials.firebaseio.com",
+            storageBucket: "",
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Parlez-nous de votre Bibliobus</h1>
+        <div class="testimonial-box">
+            <p data-bind="text: testimonialText" class="testimonial-text"></p>
+            <p data-bind="text: testimonialSignature" class="testimonial-signature"></p>
+        </div>
+        <div class="testimonial-commands">
+            <button data-bind="click: previousTestimonial"><</button>&nbsp;<button data-bind="nextTestimonial">></button>
+        </div>
+    </div>
+</div>
+<script>
+
+    var viewModel = function () {
+
+        var that = this;
+
+        //var recentTestimonials = firebase.database().ref('testimonials').limitToLast(10);
+        //console.log(recentTestimonials);
+
+        var testimonials = [
+            {
+                name: "Fivaz",
+                surname: "Fabien",
+                locality: "La Chaux-de-Fonds",
+                text: "Ceci est un test"
+            },
+            {
+                name: "Gabathuler",
+                surname: "Zoé",
+                locality: "La Chaux-de-Fonds",
+                text: "Ceci est un deuxième test"
+            }
+        ];
+
+        this.testimonialText = ko.observable("");
+        this.testimonialName = ko.observable("");
+        this.testimonialSurname = ko.observable("");
+        this.testimonialLocality = ko.observable("");
+
+        this.testimonialSignature = ko.computed(function () {
+            return that.testimonialSurname() + " " + that.testimonialName() + ", " + that.testimonialLocality();
+        });
+
+        var setTestimonial = function (data) {
+            that.testimonialName(data.name);
+            that.testimonialSurname(data.surname);
+            that.testimonialLocality(data.locality);
+            that.testimonialText(data.text);
+        };
+
+        currentTestimonial = 0;
+
+        setTestimonial(testimonials[currentTestimonial]);
+
+        this.previousTestimonial = function () {
+            if (testimonials.length > 1 && currentTestimonial > 0) {
+                setTestimonial(testimonials[currentTestimonial - 1]);
+            }
+        };
+
+        this.nextTestimonial = function () {
+            /*if (testimonials.length > 1 && currentTestimonial < testimonials.length) {
+                setTestimonial(testimonials[currentTestimonial + 1]);
+            }
+            setTestimonial(testimonials[currentTestimonial + 1]);*/
+            setTestimonial(testimonials[1]);
+            console.log('click');
+        };
+
+    };
+
+    ko.applyBindings(viewModel);
+</script>
+</body>
+</html>

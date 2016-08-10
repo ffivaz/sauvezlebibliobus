@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Parlez-nous de votre Bibliobus</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nixie+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" async></script>
+    <script src="js/knockout-3.4.0.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBpqiMmWV3KB0WB09cSC0108ULE8E_7DJ8",
+            authDomain: "bibliobus-testimonials.firebaseapp.com",
+            databaseURL: "https://bibliobus-testimonials.firebaseio.com",
+            storageBucket: "",
+        };
+        firebase.initializeApp(config);
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Parlez-nous de votre Bibliobus</h1>
+        <p>Remplissez le formulaire ci-dessous. Les informations seront ensuite affichées sur notre site dans les
+            témoignages.</p>
+        <form>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" class="form-control" placeholder="Nom"
+                           data-bind="value: testimonialName">
+                </div>
+
+                <div class="form-group">
+                    <label for="surname">Prénom</label>
+                    <input type="text" id="surname" class="form-control" placeholder="Prénom"
+                           data-bind="value: testimonialSurname">
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" data-bind="checked: testimonialAnonymous"> Anonyme ? (dans ce cas, seuls
+                        votre prénom et première lettre du nom de
+                        famille seront affichées)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="locality">Localité</label>
+                    <input type="text" id="locality" class="form-control" placeholder="Localité"
+                           data-bind="value: testimonialLocality">
+                </div>
+                <div class="form-group">
+                    <label for="text">Votre témoignage (max. 500 caractères, <span
+                            data-bind="text: currentLength"></span>
+                        restant)</label>
+                    <textarea id="text" rows="5" placeholder="Votre témoignage" class="form-control"
+                              maxlength="500" data-bind="textInput: testimonialText"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-default" data-bind="click: sendTestimonial, visible: sendVisible">
+                    Publier
+                </button>
+                <p data-bind="visible: aknowledgeVisible">Données transmises</p>
+            </div>
+        </form>
+        <p>Vos informations seront uniquement utilisées dans le cadre de la campagne pour la sauvegarde du Bibliobus via
+            l'affichage sur notre site. A la fin de la campagne, les informations pourront encore rester, jusqu'à la
+            fermeture du site.</p>
+        <p>Nous nous réservons le droit de supprimer tous les témoignages injurieux ou dont le but est de nuire à la
+            campagne ou à l'image du Bibliobus.</p>
+    </div>
+</div>
+<script>
+
+    //firebase.database().ref().child('testimonials').remove();
+
+    var writeTestimonial = function (name, surname, locality, testimonial) {
+
+        var testimonialData = {
+            name: name,
+            surname: surname,
+            locality: locality,
+            testimonial: testimonial
+        };
+
+        firebase.database().ref().child('testimonials').push(testimonialData);
+
+    };
+
+    var viewModel = function () {
+
+        var that = this;
+
+        this.testimonialName = ko.observable("");
+
+        this.truncatedTestimonialName = ko.computed(function () {
+            return that.testimonialName().charAt(0) + ".";
+        });
+
+        this.testimonialSurname = ko.observable("");
+        this.testimonialAnonymous = ko.observable(false);
+        this.testimonialLocality = ko.observable("");
+
+        this.testimonialText = ko.observable("");
+        this.currentLength = ko.computed(function () {
+            return 500 - testimonialText().length;
+        });
+
+        this.sendVisible = ko.observable(true);
+        this.aknowledgeVisible = ko.observable(false);
+        this.sendTestimonial = function () {
+
+            if (that.testimonialAnonymous()) {
+                writeTestimonial(that.truncatedTestimonialName(), that.testimonialSurname(), that.testimonialLocality(), that.testimonialText());
+                that.sendVisible(false);
+                that.aknowledgeVisible(true);
+            } else {
+                writeTestimonial(that.testimonialName(), that.testimonialSurname(), that.testimonialLocality(), that.testimonialText());
+                that.sendVisible(false);
+                that.aknowledgeVisible(true);
+            }
+
+        };
+
+    };
+
+    ko.applyBindings(viewModel);
+</script>
+</body>
+</html>

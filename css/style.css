@@ -176,3 +176,20 @@ a:hover {
 .well {
     background-color: #fff;
 }
+
+.testimonial-box {
+    border: 1px solid black;
+    padding: 20px;
+    background-color: lightgray;
+    /* TODO: rounded corners */
+}
+
+.testimonial-text {
+    font-size: 24px;
+}
+
+.testimonial-signature {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
+}
