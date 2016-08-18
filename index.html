@@ -21,15 +21,13 @@
           content="Votation du 25 septembre 2016. Bibliobus et lecture publique, NON au désengagement de l'Etat, NON au démantèlement du Bibliobus et de la lecture publique neuchâteloise.">
     <meta property="og:image" content="http://sauvezlebibliobus.ch/images/logo_FB.jpg">
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic'
-          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <!-- <script src="js/lib/jquery.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js"></script>
     <!-- <script src="js/lib/bootstrap.min.js"></script> -->
     <!-- <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
     <script>
@@ -41,7 +39,14 @@
         };
         firebase.initializeApp(config);
     </script> -->
+    <script src="js/lib/fontfaceobserver.js"></script>
     <script>
+        var font = new FontFaceObserver('Roboto');
+
+        font.load().then(function () {
+            $('html').addClass('fonts-loaded');
+        });
+
         $(document).ready(function () {
             $('a').click(function () {
                 $('html, body').animate({
@@ -256,6 +261,7 @@
         </div>
     </div>
 </div>
+<!--
 <script>
 
     var listViewModel = function () {
@@ -330,6 +336,8 @@
     ko.applyBindings(listViewModel);
 
 </script>
+-->
 </body>
-
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic'
+      rel='stylesheet' type='text/css'>
 </html>
