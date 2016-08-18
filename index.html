@@ -24,10 +24,23 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic'
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- <script src="js/lib/jquery.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" async></script>
+    <!-- <script src="js/lib/bootstrap.min.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyBpqiMmWV3KB0WB09cSC0108ULE8E_7DJ8",
+            authDomain: "bibliobus-testimonials.firebaseapp.com",
+            databaseURL: "https://bibliobus-testimonials.firebaseio.com",
+            storageBucket: ""
+        };
+        firebase.initializeApp(config);
+    </script> -->
     <script>
         $(document).ready(function () {
             $('a').click(function () {
@@ -73,6 +86,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#top" class="nav-link">Accueil</a></li>
                 <li><a href="#arguments" class="nav-link">Arguments</a></li>
+                <!-- <li><a href="#temoignages" class="nav-link">Témoignages</a></li> -->
                 <li><a href="#adhesionComite" class="nav-link">Comité</a></li>
             </ul>
         </div>
@@ -105,7 +119,7 @@
             </h2>
 
             <p>
-                <strong>Le Bibliobus favorise la diffusion de la lecture publique, atténue les disparités communales au
+                <strong>Le Bibliobus favorise la diffusion de la lecture publique et atténue les disparités communales au
                     niveau de
                     l’accès aux livres et aux bibliothèques. Il soutient l’effort culturel fourni par une trentaine de
                     communes du canton qui ne pourraient, à elles seules, financer une telle institution.</strong></p>
@@ -153,6 +167,30 @@
             </p>
         </div>
     </div>
+    <!-- <div class="row" id="temoignages">
+        <div class="col-md-12">
+            <h1><br><br>Parlez-nous de votre Bibliobus</h1>
+            <blockquote class="example-twitter">
+                <p data-bind="text: testimonialText"></p>
+            </blockquote>
+            <p data-bind="text: testimonialSignature"></p>
+
+            <div class="testimonial-commands">
+                <button title="précédent" class="btn btn-default" data-bind="click: previousTestimonial"><span
+                        class="glyphicon glyphicon-step-backward"></span></button>
+                &nbsp;
+                <button title="suivant" class="btn btn-default" data-bind="click: nextTestimonial"><span
+                        class="glyphicon glyphicon-step-forward"></span></button>
+                <a href="give-testimonials.html" class="btn btn-default">Ajouter votre propre témoignage</a>
+            </div>
+
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+            <p>
+                &nbsp;
+            </p>
+        </div>
+    </div> -->
     <div class="row well" id="adhesionComite">
         <div class="col-md-12 col-sm-12 col-xs-12 text-center">
             <h1><br><br>ADHESION AU COMITE</h1>
@@ -218,6 +256,80 @@
         </div>
     </div>
 </div>
+<script>
+
+    var listViewModel = function () {
+
+        var that = this;
+        var testimonials = ko.observableArray([]);
+        testimonials.push(
+                {
+                    name: "",
+                    surname: "",
+                    locality: "",
+                    testimonial: "Chargement des données..."
+                }
+        );
+
+        var recentTestimonials = firebase.database().ref('testimonials/').orderByChild("order");
+        recentTestimonials.on('child_added', function (data) {
+            testimonials.push(data.val());
+        });
+
+        this.testimonialText = ko.observable("");
+        this.testimonialName = ko.observable("");
+        this.testimonialSurname = ko.observable("");
+        this.testimonialLocality = ko.observable("");
+
+        this.testimonialSignature = ko.computed(function () {
+            return that.testimonialSurname() + " " + that.testimonialName() + ", " + that.testimonialLocality();
+        });
+
+        var setTestimonial = function (data) {
+            that.testimonialName(data.name);
+            that.testimonialSurname(data.surname);
+            that.testimonialLocality(data.locality);
+            that.testimonialText(data.testimonial);
+        };
+
+        this.currentTestimonial = ko.observable();
+
+        this.currentTestimonial.subscribe(function (newValue) {
+            setTestimonial(testimonials()[newValue]);
+        });
+
+        this.currentTestimonial(0);
+
+        this.previousTestimonial = function () {
+            if (that.currentTestimonial() > 0) {
+                that.currentTestimonial(that.currentTestimonial() - 1);
+            } else {
+                that.currentTestimonial(testimonials().length - 1);
+            }
+        };
+
+        this.nextTestimonial = function () {
+            if (that.currentTestimonial() < testimonials().length - 1) {
+                that.currentTestimonial(that.currentTestimonial() + 1);
+            } else {
+                that.currentTestimonial(0);
+            }
+            if (i) {
+                testimonials.shift();
+                i = false;
+            }
+        };
+
+        setInterval(function () {
+            that.nextTestimonial();
+        }, 5000)
+
+    };
+
+    var i = true;
+    ko.applyBindings(listViewModel);
+
+</script>
 </body>
 
 </html>

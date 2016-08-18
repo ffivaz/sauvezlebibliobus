@@ -79,8 +79,6 @@
 </div>
 <script>
 
-    //firebase.database().ref().child('testimonials').remove();
-
     var writeTestimonial = function (name, surname, locality, testimonial) {
 
         var testimonialData = {
@@ -123,21 +121,21 @@
         this.aknowledgeVisible = ko.observable(false);
         this.sendTestimonial = function () {
             if (this.testimonialName() == '' || this.testimonialLocality() == '' || this.testimonialSurname() == '' || this.currentLength() == 500) {
-                that.errorMessage('Remplissez tous les champs!');
+                that.errorMessage('Remplissez tous les champs, svp. !');
             } else {
                 if (that.testimonialAnonymous()) {
                     writeTestimonial(that.truncatedTestimonialName(), that.testimonialSurname(), that.testimonialLocality(), that.testimonialText());
                     that.sendVisible(false);
                     that.aknowledgeVisible(true);
                     setTimeout(function () {
-                        window.location.replace("list-testimonials.html")
+                        window.location.replace("index.html#temoignages")
                     }, 2500);
                 } else {
                     writeTestimonial(that.testimonialName(), that.testimonialSurname(), that.testimonialLocality(), that.testimonialText());
                     that.sendVisible(false);
                     that.aknowledgeVisible(true);
                     setTimeout(function () {
-                        window.location.replace("list-testimonials.html")
+                        window.location.replace("index.html#temoignages")
                     }, 2500);
                 }
             }
