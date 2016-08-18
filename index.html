@@ -41,13 +41,7 @@
         };
         firebase.initializeApp(config);
     </script> -->
-    <script src="js/lib/fontfaceobserver.js"></script>
     <script>
-        var font = new FontFaceObserver('Roboto');
-
-        font.load().then(function () {
-            $('html').addClass('fonts-loaded');
-        });
 
         $(document).ready(function () {
             $('a').click(function () {
